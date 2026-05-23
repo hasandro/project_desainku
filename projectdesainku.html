@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DesainKu — Desain Profesional, Harga Terjangkau</title>
+<meta name="description" content="Solusi desain grafis untuk UMKM, brand lokal, dan kreator konten. Logo, banner, poster, konten sosial media — siap dalam 24 jam.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+  --c1:#0A0F0A;
+  --c2:#111A11;
+  --c3:#39E75F;
+  --c4:#D4F542;
+  --c5:#0D1A0D;
+  --white:#F0FFF0;
+  --gray:#5A7A5A;
+  --light-bg:#0C120C;
+  --card-bg:#141F14;
+  --font-head:'Syne',sans-serif;
+  --font-body:'DM Sans',sans-serif;
+  --radius:16px;
+  --radius-sm:8px;
+  --green-bright:#39E75F;
+  --green-dim:#1A9934;
+  --yellow-accent:#D4F542;
+  --white-pure:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--light-bg);color:var(--white);overflow-x:hidden;
+  background-image:
+    linear-gradient(rgba(57,231,95,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(57,231,95,0.03) 1px, transparent 1px);
+  background-size:40px 40px;
+}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button,input{font-family:var(--font-body)}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--c1)}
+::-webkit-scrollbar-thumb{background:var(--c3);border-radius:3px}
+
+/* ─── NAVBAR ─────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 5%;
+  background:rgba(10,15,10,0.88);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(57,231,95,0.12);
+  transition:all .3s ease;
+}
+nav.scrolled{padding:12px 5%;box-shadow:0 4px 30px rgba(0,0,0,0.4)}
+.nav-logo{
+  font-family:var(--font-head);font-size:22px;font-weight:800;
+  display:flex;align-items:center;gap:8px;
+  letter-spacing:-0.5px;
+}
+.nav-logo span{color:var(--c3)}
+.logo-dot{
+  width:10px;height:10px;background:var(--c3);
+  border-radius:50%;display:inline-block;
+  animation:blink 2s ease-in-out infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:14px;font-weight:400;color:rgba(240,255,240,0.55);transition:color .2s}
+.nav-links a:hover{color:var(--c3)}
+.nav-cta{
+  background:var(--c3);color:var(--c1);
+  padding:10px 22px;border-radius:100px;
+  font-size:13px;font-weight:600;
+  transition:all .2s;border:none;cursor:pointer;
+  display:flex;align-items:center;gap:8px;
+}
+.nav-cta:hover{background:var(--c4);transform:translateY(-1px)}
+.nav-cta i{font-size:12px}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{width:22px;height:2px;background:var(--white);border-radius:2px;transition:all .3s}
+.mobile-menu{
+  display:none;position:fixed;top:0;left:0;right:0;bottom:0;
+  background:#080D08;z-index:200;
+  flex-direction:column;align-items:center;justify-content:center;gap:32px;
+}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--font-head);font-size:28px;font-weight:700;color:var(--white);transition:color .2s}
+.mobile-menu a:hover{color:var(--c3)}
+.mobile-close{
+  position:absolute;top:24px;right:5%;
+  background:none;border:none;cursor:pointer;
+  color:var(--white);font-size:24px;
+}
+
+/* ─── HERO ─────────────────────────────── */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:120px 5% 60px;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;
+  top:-200px;left:-150px;
+  width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle, rgba(57,231,95,0.07) 0%, transparent 65%);
+  pointer-events:none;z-index:0;
+}
+.hero::after{
+  content:'';position:absolute;
+  bottom:-100px;right:0;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle, rgba(212,245,66,0.04) 0%, transparent 65%);
+  pointer-events:none;z-index:0;
+}
+.hero > *{position:relative;z-index:1;}
+.hero-bg-text{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:var(--font-head);font-size:28vw;font-weight:800;
+  color:rgba(57,231,95,0.03);white-space:nowrap;pointer-events:none;
+  user-select:none;letter-spacing:-2vw;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(57,231,95,0.12);color:var(--c3);
+  border:1px solid rgba(57,231,95,0.25);
+  font-size:12px;font-weight:500;padding:6px 14px;
+  border-radius:100px;margin-bottom:24px;
+  width:fit-content;
+}
+.hero-badge i{font-size:11px}
+.hero h1{
+  font-family:var(--font-head);
+  font-size:clamp(42px,7vw,92px);
+  font-weight:800;line-height:0.95;
+  letter-spacing:-2px;
+  max-width:900px;
+  margin-bottom:28px;
+  color:var(--white);
+}
+.hero h1 em{
+  font-style:normal;color:var(--c3);
+  display:inline-block;
+}
+.hero h1 .highlight{
+  position:relative;display:inline-block;
+}
+.hero h1 .highlight::after{
+  content:'';position:absolute;
+  bottom:-4px;left:0;right:0;height:6px;
+  background:var(--c4);border-radius:3px;
+  transform:scaleX(0);transform-origin:left;
+  animation:underline-grow 1s ease .6s forwards;
+}
+@keyframes underline-grow{to{transform:scaleX(1)}}
+.hero-desc{
+  font-size:18px;color:rgba(240,255,240,0.55);
+  max-width:480px;line-height:1.65;
+  margin-bottom:40px;
+}
+.hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.btn-main{
+  background:var(--c3);color:#050A05;
+  padding:16px 32px;border-radius:100px;
+  font-size:15px;font-weight:600;
+  display:flex;align-items:center;gap:10px;
+  transition:all .25s;border:none;cursor:pointer;
+}
+.btn-main:hover{background:var(--c4);transform:translateY(-2px);box-shadow:0 12px 30px rgba(57,231,95,0.3)}
+.btn-outline{
+  background:transparent;color:var(--white);
+  padding:16px 32px;border-radius:100px;
+  font-size:15px;font-weight:500;
+  display:flex;align-items:center;gap:10px;
+  border:1.5px solid rgba(57,231,95,0.4);transition:all .25s;cursor:pointer;
+}
+.btn-outline:hover{background:var(--c3);color:#050A05;border-color:var(--c3)}
+.hero-stats{
+  display:flex;gap:40px;margin-top:64px;
+  padding-top:40px;border-top:1px solid rgba(57,231,95,0.15);
+  flex-wrap:wrap;
+}
+.stat-item{display:flex;flex-direction:column;gap:4px}
+.stat-num{font-family:var(--font-head);font-size:36px;font-weight:800;letter-spacing:-1px;color:var(--white)}
+.stat-lbl{font-size:13px;color:rgba(240,255,240,0.45)}
+.hero-visual{
+  position:absolute;right:5%;top:50%;transform:translateY(-50%);
+  width:min(420px,40vw);
+  display:flex;flex-direction:column;gap:12px;
+}
+.hero-card{
+  background:#141F14;border-radius:20px;
+  padding:20px 24px;
+  border:1px solid rgba(57,231,95,0.15);
+  animation:float 4s ease-in-out infinite;
+}
+.hero-card:nth-child(2){animation-delay:-2s;margin-left:40px}
+.hero-card:nth-child(3){animation-delay:-1s;margin-left:20px}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.card-label{font-size:11px;color:rgba(240,255,240,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.card-title{font-family:var(--font-head);font-size:17px;font-weight:700;margin-bottom:6px;color:var(--white)}
+.card-tag{display:inline-flex;align-items:center;gap:5px;background:rgba(57,231,95,0.15);color:var(--c3);border:1px solid rgba(57,231,95,0.25);font-size:11px;font-weight:500;padding:3px 10px;border-radius:100px}
+
+/* ─── MARQUEE ─────────────────────────────── */
+.marquee-wrap{
+  background:#060B06;padding:18px 0;overflow:hidden;
+  position:relative;border-top:1px solid rgba(57,231,95,0.1);
+  border-bottom:1px solid rgba(57,231,95,0.1);
+}
+.marquee-track{
+  display:flex;gap:48px;width:max-content;
+  animation:marquee 20s linear infinite;
+}
+.marquee-track:hover{animation-play-state:paused}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.marquee-item{
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--font-head);font-size:13px;font-weight:600;
+  color:rgba(240,255,240,0.35);white-space:nowrap;text-transform:uppercase;letter-spacing:1px;
+}
+.marquee-item i{color:var(--c3);font-size:14px}
+.marquee-item.accent{color:var(--c3)}
+
+/* ─── LAYANAN ─────────────────────────────── */
+.section{padding:100px 5%}
+.section-label{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:2px;
+  color:var(--c3);margin-bottom:20px;
+}
+.section-label::before{content:'';width:24px;height:2px;background:var(--c3);border-radius:2px}
+.section-title{
+  font-family:var(--font-head);
+  font-size:clamp(32px,4.5vw,56px);
+  font-weight:800;letter-spacing:-1.5px;
+  line-height:1.05;margin-bottom:16px;
+  color:var(--white);
+}
+.section-desc{font-size:17px;color:rgba(240,255,240,0.45);max-width:480px;line-height:1.65}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:16px;margin-top:52px;
+}
+.svc-card{
+  background:var(--card-bg);border-radius:24px;
+  padding:28px;transition:all .3s;cursor:pointer;
+  position:relative;overflow:hidden;border:1px solid rgba(57,231,95,0.08);
+}
+.svc-card::before{
+  content:'';position:absolute;
+  bottom:0;left:0;right:0;height:3px;
+  background:var(--c3);transform:scaleX(0);transform-origin:left;
+  transition:transform .3s;
+}
+.svc-card:hover{background:#1A2A1A;border-color:rgba(57,231,95,0.25);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,0.4)}
+.svc-card:hover::before{transform:scaleX(1)}
+.svc-icon-wrap{
+  width:52px;height:52px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;margin-bottom:20px;
+}
+.svc-card h3{font-family:var(--font-head);font-size:20px;font-weight:700;margin-bottom:8px;letter-spacing:-0.5px;color:var(--white)}
+.svc-card p{font-size:14px;color:rgba(240,255,240,0.45);line-height:1.6;margin-bottom:16px}
+.svc-price{
+  font-family:var(--font-head);font-size:15px;font-weight:700;
+  color:var(--c3);display:flex;align-items:center;justify-content:space-between;
+}
+.svc-price i{font-size:16px;color:rgba(240,255,240,0.3);transition:all .2s}
+.svc-card:hover .svc-price i{opacity:1;transform:translateX(4px);color:var(--c3)}
+
+/* ─── PROSES ─────────────────────────────── */
+.process-section{background:#060B06;padding:100px 5%;position:relative;overflow:hidden}
+.process-section .section-label{color:var(--c3)}
+.process-section .section-label::before{background:var(--c3)}
+.process-section .section-title{color:var(--white)}
+.process-section .section-desc{color:rgba(240,255,240,0.4)}
+.process-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  margin-top:60px;position:relative;
+}
+.process-grid::before{
+  content:'';position:absolute;
+  top:36px;left:12.5%;right:12.5%;height:1px;
+  background:rgba(57,231,95,0.12);z-index:0;
+}
+.process-step{
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  padding:0 20px;position:relative;z-index:1;
+}
+.step-circle{
+  width:72px;height:72px;border-radius:50%;
+  background:rgba(57,231,95,0.06);
+  border:1px solid rgba(57,231,95,0.15);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:24px;font-size:26px;
+  transition:all .3s;
+}
+.process-step:hover .step-circle{background:var(--c3);border-color:var(--c3);transform:scale(1.1)}
+.process-step:hover .step-circle i{color:#050A05}
+.step-circle i{font-size:26px;color:var(--c3);transition:color .3s}
+.step-num-label{
+  font-family:var(--font-head);font-size:11px;font-weight:700;
+  color:var(--c4);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;
+}
+.process-step h3{
+  font-family:var(--font-head);font-size:18px;font-weight:700;
+  color:var(--white);margin-bottom:8px;letter-spacing:-0.5px;
+}
+.process-step p{font-size:13px;color:rgba(240,255,240,0.4);line-height:1.6}
+
+/* ─── KEUNGGULAN ─────────────────────────────── */
+.trust-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px;
+}
+.trust-item{
+  background:var(--card-bg);border-radius:20px;padding:28px;
+  transition:all .3s;border:1px solid rgba(57,231,95,0.08);
+}
+.trust-item:hover{background:#1A2A1A;box-shadow:0 12px 40px rgba(0,0,0,0.4);transform:translateY(-3px)}
+.trust-icon{
+  width:44px;height:44px;background:rgba(57,231,95,0.1);border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;color:var(--c3);margin-bottom:18px;
+}
+.trust-item h4{font-family:var(--font-head);font-size:17px;font-weight:700;margin-bottom:8px;letter-spacing:-0.3px;color:var(--white)}
+.trust-item p{font-size:14px;color:rgba(240,255,240,0.45);line-height:1.6}
+
+/* ─── TESTIMONI ─────────────────────────────── */
+.testi-section{background:#0A0F0A;padding:100px 5%;border-top:1px solid rgba(57,231,95,0.08)}
+.testi-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:52px;
+}
+.testi-card{
+  background:#141F14;border-radius:24px;padding:32px;
+  transition:all .3s;border:1px solid rgba(57,231,95,0.1);
+  position:relative;
+}
+.testi-card:hover{border-color:rgba(57,231,95,0.25);transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,0.4)}
+.testi-card:first-child{background:#0D1A0D;border-color:rgba(57,231,95,0.2)}
+.testi-quote{
+  font-size:40px;line-height:1;color:var(--c3);
+  font-family:Georgia,serif;margin-bottom:12px;
+}
+.testi-card:first-child .testi-quote{color:var(--c3)}
+.testi-text{font-size:15px;line-height:1.75;margin-bottom:24px;color:rgba(240,255,240,0.7)}
+.testi-card:first-child .testi-text{color:rgba(240,255,240,0.85)}
+.stars{color:var(--c4);font-size:13px;margin-bottom:4px;letter-spacing:2px}
+.testi-author{display:flex;align-items:center;gap:12px}
+.avatar{
+  width:44px;height:44px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-head);font-size:14px;font-weight:700;
+  flex-shrink:0;
+}
+.author-name{font-family:var(--font-head);font-size:14px;font-weight:700;letter-spacing:-0.3px;color:var(--white)}
+.testi-card:first-child .author-name{color:var(--white)}
+.author-role{font-size:12px;color:rgba(240,255,240,0.4)}
+.testi-card:first-child .author-role{color:rgba(240,255,240,0.4)}
+.testi-featured-badge{
+  position:absolute;top:24px;right:24px;
+  background:var(--c3);color:#050A05;
+  font-size:10px;font-weight:700;padding:4px 10px;
+  border-radius:100px;text-transform:uppercase;letter-spacing:1px;
+}
+
+/* ─── HARGA ─────────────────────────────── */
+.pricing-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px;
+}
+.pricing-card{
+  background:var(--card-bg);border-radius:24px;padding:32px;
+  transition:all .3s;position:relative;border:1px solid rgba(57,231,95,0.08);
+}
+.pricing-card.popular{
+  background:#0D1A0D;transform:scale(1.04);
+  box-shadow:0 24px 60px rgba(57,231,95,0.15);
+  border-color:rgba(57,231,95,0.3);
+}
+.popular-badge{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  background:var(--c3);color:#050A05;
+  font-size:11px;font-weight:600;padding:5px 16px;
+  border-radius:100px;white-space:nowrap;
+}
+.pricing-name{font-family:var(--font-head);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;color:rgba(240,255,240,0.5)}
+.pricing-card.popular .pricing-name{color:var(--c3)}
+.pricing-price{font-family:var(--font-head);font-size:38px;font-weight:800;letter-spacing:-1.5px;margin-bottom:4px;color:var(--white)}
+.pricing-card.popular .pricing-price{color:var(--white)}
+.pricing-sub{font-size:13px;color:rgba(240,255,240,0.35);margin-bottom:28px}
+.pricing-card.popular .pricing-sub{color:rgba(240,255,240,0.5)}
+.pricing-features{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
+.pricing-features li{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(240,255,240,0.7)}
+.pricing-card.popular .pricing-features li{color:rgba(240,255,240,0.85)}
+.pricing-features li i{font-size:14px;color:var(--c3);flex-shrink:0}
+.pricing-card.popular .pricing-features li i{color:var(--c3)}
+.pricing-btn{
+  width:100%;padding:14px;border-radius:100px;
+  font-family:var(--font-body);font-size:14px;font-weight:500;
+  cursor:pointer;transition:all .2s;border:1.5px solid rgba(57,231,95,0.3);
+  background:transparent;color:rgba(240,255,240,0.7);
+}
+.pricing-btn:hover{background:var(--c3);color:#050A05;border-color:var(--c3)}
+.pricing-card.popular .pricing-btn{
+  background:var(--c3);border-color:var(--c3);color:#050A05;font-weight:600;
+}
+.pricing-card.popular .pricing-btn:hover{background:var(--c4);border-color:var(--c4);color:#050A05}
+
+/* ─── CTA ─────────────────────────────── */
+.cta-section{
+  background:#060B06;padding:100px 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:40px;flex-wrap:wrap;position:relative;overflow:hidden;
+  border-top:1px solid rgba(57,231,95,0.1);
+}
+.cta-bg-shape{
+  position:absolute;right:-100px;top:-100px;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(57,231,95,0.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.cta-section h2{
+  font-family:var(--font-head);
+  font-size:clamp(32px,4vw,52px);
+  font-weight:800;letter-spacing:-1.5px;
+  color:var(--white);max-width:540px;line-height:1.1;
+}
+.cta-section h2 span{color:var(--c3)}
+.cta-form-wrap{display:flex;flex-direction:column;gap:12px;min-width:300px}
+.cta-input-group{display:flex;gap:0;border-radius:100px;overflow:hidden;border:1px solid rgba(57,231,95,0.2)}
+.cta-input{
+  flex:1;padding:16px 24px;
+  background:rgba(57,231,95,0.05);border:none;
+  font-family:var(--font-body);font-size:14px;color:var(--white);
+  outline:none;
+}
+.cta-input::placeholder{color:rgba(240,255,240,0.3)}
+.cta-submit{
+  padding:16px 28px;background:var(--c3);
+  border:none;cursor:pointer;
+  font-family:var(--font-body);font-size:14px;font-weight:600;color:#050A05;
+  transition:all .2s;white-space:nowrap;
+  display:flex;align-items:center;gap:8px;
+}
+.cta-submit:hover{background:var(--c4);color:#050A05}
+.cta-note{font-size:12px;color:rgba(240,255,240,0.25);text-align:center}
+
+/* ─── FAQ ─────────────────────────────── */
+.faq-list{max-width:720px;margin:52px auto 0;display:flex;flex-direction:column;gap:2px}
+.faq-item{border-radius:var(--radius-sm);overflow:hidden}
+.faq-q{
+  width:100%;text-align:left;padding:22px 24px;
+  background:#141F14;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  font-family:var(--font-body);font-size:15px;font-weight:500;color:var(--white);
+  transition:background .2s;
+}
+.faq-q:hover{background:#1A2A1A}
+.faq-q.open{background:#0D1A0D;color:var(--c3);border-radius:var(--radius-sm) var(--radius-sm) 0 0}
+.faq-chevron{font-size:14px;transition:transform .3s;flex-shrink:0}
+.faq-q.open .faq-chevron{transform:rotate(180deg)}
+.faq-a{
+  max-height:0;overflow:hidden;
+  background:#0D1A0D;border-radius:0 0 var(--radius-sm) var(--radius-sm);
+  transition:max-height .35s ease,padding .35s ease;
+}
+.faq-a.open{max-height:200px}
+.faq-a p{padding:0 24px 22px;font-size:14px;color:rgba(240,255,240,0.5);line-height:1.7}
+
+/* ─── FOOTER ─────────────────────────────── */
+footer{
+  background:#060B06;padding:60px 5% 32px;
+  border-top:1px solid rgba(57,231,95,0.1);
+}
+.footer-top{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;
+  margin-bottom:52px;
+}
+.footer-logo{
+  font-family:var(--font-head);font-size:24px;font-weight:800;
+  color:var(--white);margin-bottom:14px;display:flex;align-items:center;gap:8px;
+}
+.footer-logo span{color:var(--c3)}
+.footer-desc{font-size:14px;color:rgba(255,255,255,0.4);line-height:1.7;max-width:260px;margin-bottom:24px}
+.footer-social{display:flex;gap:10px}
+.social-btn{
+  width:38px;height:38px;border-radius:50%;
+  background:rgba(255,255,255,0.07);
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;color:rgba(255,255,255,0.5);
+  transition:all .2s;border:none;cursor:pointer;
+}
+.social-btn:hover{background:var(--c3);color:#050A05}
+.footer-col h4{
+  font-family:var(--font-head);font-size:13px;font-weight:700;
+  color:var(--white);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:18px;
+}
+.footer-col a{
+  display:block;font-size:14px;color:rgba(255,255,255,0.4);
+  margin-bottom:10px;transition:color .2s;
+}
+.footer-col a:hover{color:var(--c3)}
+.footer-bottom{
+  border-top:1px solid rgba(57,231,95,0.08);
+  padding-top:24px;display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
+}
+.footer-bottom p{font-size:13px;color:rgba(255,255,255,0.25)}
+.footer-badge{
+  display:flex;align-items:center;gap:6px;
+  font-size:12px;color:rgba(255,255,255,0.25);
+}
+.footer-badge i{color:var(--c3)}
+
+/* ─── TOAST / NOTIF ─────────────────────────────── */
+.toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);
+  background:#0D1A0D;color:var(--white);
+  padding:14px 24px;border-radius:100px;
+  font-size:14px;font-weight:500;
+  display:flex;align-items:center;gap:10px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.5);
+  border:1px solid rgba(57,231,95,0.2);
+  transition:transform .4s cubic-bezier(0.34,1.56,0.64,1);
+  z-index:999;white-space:nowrap;
+}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.toast i{color:var(--c3);font-size:16px}
+
+/* ─── SCROLL ANIMATION ─────────────────────────────── */
+.reveal{opacity:0;transform:translateY(28px);transition:all .6s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+
+/* ─── RESPONSIVE ─────────────────────────────── */
+@media(max-width:1024px){
+  .hero-visual{display:none}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  nav{padding:14px 5%}
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .hero h1{font-size:clamp(36px,10vw,52px);letter-spacing:-1px}
+  .hero-desc{font-size:16px}
+  .hero-stats{gap:24px}
+  .services-grid{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:repeat(2,1fr);gap:32px}
+  .process-grid::before{display:none}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .pricing-grid{grid-template-columns:1fr}
+  .pricing-card.popular{transform:none}
+  .cta-section{flex-direction:column;text-align:center}
+  .cta-form-wrap{width:100%}
+  .footer-top{grid-template-columns:1fr;gap:32px}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .section{padding:72px 5%}
+  .section-title{letter-spacing:-0.5px}
+}
+@media(max-width:480px){
+  .trust-grid{grid-template-columns:1fr}
+  .hero-stats .stat-num{font-size:28px}
+  .cta-input-group{flex-direction:column;border-radius:var(--radius);overflow:visible;border:none;gap:8px}
+  .cta-input{border-radius:100px;border:1px solid rgba(255,255,255,0.15);padding:16px 24px}
+  .cta-submit{border-radius:100px;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <span>Desain</span>Ku <div class="logo-dot"></div>
+  </div>
+  <div class="nav-links">
+    <a href="#layanan">Layanan</a>
+    <a href="#proses">Cara Kerja</a>
+    <a href="#harga">Harga</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <button class="nav-cta" onclick="openWA()"><i class="fab fa-whatsapp"></i> Chat Sekarang</button>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()"><i class="fas fa-times"></i></button>
+  <a href="#layanan" onclick="toggleMenu()">Layanan</a>
+  <a href="#proses" onclick="toggleMenu()">Cara Kerja</a>
+  <a href="#harga" onclick="toggleMenu()">Harga</a>
+  <a href="#faq" onclick="toggleMenu()">FAQ</a>
+  <button class="btn-main" onclick="openWA();toggleMenu()"><i class="fab fa-whatsapp"></i> Chat Sekarang</button>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-text">DESIGN</div>
+  <div class="hero-badge reveal"><i class="fas fa-bolt"></i> Pengiriman dalam 24 Jam</div>
+  <h1 class="reveal reveal-delay-1">
+    Desain <em>Profesional</em>,<br>
+    Harga <span class="highlight">Terjangkau</span>
+  </h1>
+  <p class="hero-desc reveal reveal-delay-2">
+    Solusi desain grafis untuk UMKM, brand lokal, dan kreator konten. Logo, banner, poster, hingga konten sosial media.
+  </p>
+  <div class="hero-actions reveal reveal-delay-3">
+    <button class="btn-main" onclick="document.getElementById('layanan').scrollIntoView({behavior:'smooth'})">
+      <i class="fas fa-arrow-right"></i> Lihat Layanan
+    </button>
+    <button class="btn-outline" onclick="openWA()">
+      <i class="fab fa-whatsapp"></i> Konsultasi Gratis
+    </button>
+  </div>
+  <div class="hero-stats reveal reveal-delay-4">
+    <div class="stat-item">
+      <div class="stat-num" id="counter1">0</div>
+      <div class="stat-lbl">Klien Puas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" id="counter2">0</div>
+      <div class="stat-lbl">Desain Selesai</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4.9 <span style="font-size:20px;color:var(--c4)">★</span></div>
+      <div class="stat-lbl">Rating Rata-rata</div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-card">
+      <div class="card-label">Logo & Branding</div>
+      <div class="card-title">PT. Makmur Jaya</div>
+      <span class="card-tag"><i class="fas fa-check" style="font-size:9px"></i> Selesai 6 jam</span>
+    </div>
+    <div class="hero-card">
+      <div class="card-label">Konten Instagram</div>
+      <div class="card-title">Feed Pack 9 Konten</div>
+      <span class="card-tag"><i class="fas fa-check" style="font-size:9px"></i> Selesai 12 jam</span>
+    </div>
+    <div class="hero-card">
+      <div class="card-label">Packaging</div>
+      <div class="card-title">Label Skincare Madu</div>
+      <span class="card-tag"><i class="fas fa-check" style="font-size:9px"></i> Selesai 18 jam</span>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="marquee-item"><i class="fas fa-star"></i> Logo & Branding</div>
+    <div class="marquee-item accent">— Konten Media Sosial —</div>
+    <div class="marquee-item"><i class="fas fa-star"></i> Poster & Flyer</div>
+    <div class="marquee-item accent">— Packaging Produk —</div>
+    <div class="marquee-item"><i class="fas fa-star"></i> Desain Web UI</div>
+    <div class="marquee-item accent">— Presentasi & Pitch Deck —</div>
+    <div class="marquee-item"><i class="fas fa-star"></i> Banner Iklan</div>
+    <div class="marquee-item accent">— Revisi Bebas —</div>
+    <div class="marquee-item"><i class="fas fa-star"></i> Logo & Branding</div>
+    <div class="marquee-item accent">— Konten Media Sosial —</div>
+    <div class="marquee-item"><i class="fas fa-star"></i> Poster & Flyer</div>
+    <div class="marquee-item accent">— Packaging Produk —</div>
+    <div class="marquee-item"><i class="fas fa-star"></i> Desain Web UI</div>
+    <div class="marquee-item accent">— Presentasi & Pitch Deck —</div>
+    <div class="marquee-item"><i class="fas fa-star"></i> Banner Iklan</div>
+    <div class="marquee-item accent">— Revisi Bebas —</div>
+  </div>
+</div>
+
+<!-- LAYANAN -->
+<section class="section" id="layanan">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-label reveal">Layanan Kami</div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px">
+      <div>
+        <h2 class="section-title reveal">Semua Kebutuhan<br>Desainmu Ada di Sini</h2>
+        <p class="section-desc reveal">Pilih layanan sesuai kebutuhan, revisi bebas sampai puas</p>
+      </div>
+      <button class="btn-outline reveal" onclick="openWA()" style="flex-shrink:0">Lihat Semua <i class="fas fa-arrow-right"></i></button>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <div class="svc-icon-wrap" style="background:rgba(57,231,95,0.1)"><i class="fas fa-pen-nib" style="color:var(--c3)"></i></div>
+        <h3>Logo & Branding</h3>
+        <p>Identitas visual yang kuat dan berkesan untuk bisnis kamu. Konsep unik, bukan template.</p>
+        <div class="svc-price">Mulai Rp 99.000 <i class="fas fa-arrow-right"></i></div>
+      </div>
+      <div class="svc-card reveal reveal-delay-1">
+        <div class="svc-icon-wrap" style="background:rgba(212,245,66,0.1)"><i class="fas fa-mobile-alt" style="color:var(--c4)"></i></div>
+        <h3>Konten Sosial Media</h3>
+        <p>Feed Instagram, story, thumbnail YouTube, dan banner promosi harian yang konsisten.</p>
+        <div class="svc-price">Mulai Rp 49.000 <i class="fas fa-arrow-right"></i></div>
+      </div>
+      <div class="svc-card reveal reveal-delay-2">
+        <div class="svc-icon-wrap" style="background:rgba(57,231,95,0.08)"><i class="fas fa-file-image" style="color:var(--c3)"></i></div>
+        <h3>Poster & Flyer</h3>
+        <p>Desain promosi untuk event, launching produk, dan penawaran spesial yang eye-catching.</p>
+        <div class="svc-price">Mulai Rp 39.000 <i class="fas fa-arrow-right"></i></div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon-wrap" style="background:rgba(240,255,240,0.06)"><i class="fas fa-laptop-code" style="color:rgba(240,255,240,0.7)"></i></div>
+        <h3>Desain Web & UI</h3>
+        <p>Mockup tampilan website dan aplikasi mobile yang modern dan user-friendly.</p>
+        <div class="svc-price">Mulai Rp 199.000 <i class="fas fa-arrow-right"></i></div>
+      </div>
+      <div class="svc-card reveal reveal-delay-1">
+        <div class="svc-icon-wrap" style="background:rgba(212,245,66,0.08)"><i class="fas fa-box" style="color:var(--c4)"></i></div>
+        <h3>Packaging Produk</h3>
+        <p>Label, stiker, dan kemasan produk UMKM yang terlihat premium dan menarik di rak.</p>
+        <div class="svc-price">Mulai Rp 79.000 <i class="fas fa-arrow-right"></i></div>
+      </div>
+      <div class="svc-card reveal reveal-delay-2">
+        <div class="svc-icon-wrap" style="background:rgba(57,231,95,0.07)"><i class="fas fa-chart-pie" style="color:var(--c3)"></i></div>
+        <h3>Presentasi & Pitch</h3>
+        <p>Slide deck profesional untuk rapat, investor, dan pitching bisnis yang meyakinkan.</p>
+        <div class="svc-price">Mulai Rp 149.000 <i class="fas fa-arrow-right"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROSES -->
+<section class="process-section" id="proses">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-label reveal">Cara Kerja</div>
+    <h2 class="section-title reveal" style="max-width:560px">Pesan Desain Semudah Chat WhatsApp</h2>
+    <p class="section-desc reveal">4 langkah sederhana, desainmu siap dalam hitungan jam</p>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="step-circle"><i class="fas fa-th-large"></i></div>
+        <div class="step-num-label">Langkah 01</div>
+        <h3>Pilih Layanan</h3>
+        <p>Tentukan jenis desain yang kamu butuhkan dari katalog lengkap kami</p>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="step-circle"><i class="fas fa-clipboard-list"></i></div>
+        <div class="step-num-label">Langkah 02</div>
+        <h3>Isi Brief</h3>
+        <p>Ceritakan konsep, warna, dan referensi desain yang kamu inginkan</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="step-circle"><i class="fas fa-credit-card"></i></div>
+        <div class="step-num-label">Langkah 03</div>
+        <h3>Bayar & Tunggu</h3>
+        <p>Konfirmasi pembayaran, proses desain mulai langsung oleh tim kami</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="step-circle"><i class="fas fa-download"></i></div>
+        <div class="step-num-label">Langkah 04</div>
+        <h3>Terima File</h3>
+        <p>Download file siap cetak dan siap upload dalam berbagai format</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEUNGGULAN -->
+<section class="section">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-label reveal">Kenapa Kami</div>
+    <h2 class="section-title reveal">Bukan Sekadar Desainer —<br>Partner Visual Bisnismu</h2>
+    <div class="trust-grid">
+      <div class="trust-item reveal">
+        <div class="trust-icon"><i class="fas fa-bolt"></i></div>
+        <h4>Cepat 24 Jam</h4>
+        <p>Desain selesai dalam satu hari kerja, atau uang kembali tanpa syarat apapun.</p>
+      </div>
+      <div class="trust-item reveal reveal-delay-1">
+        <div class="trust-icon"><i class="fas fa-redo"></i></div>
+        <h4>Revisi Bebas</h4>
+        <p>Tidak puas? Revisi sampai kamu 100% happy, tanpa biaya tambahan.</p>
+      </div>
+      <div class="trust-item reveal reveal-delay-2">
+        <div class="trust-icon"><i class="fas fa-file-export"></i></div>
+        <h4>File Lengkap</h4>
+        <p>PNG, JPG, PDF, hingga file sumber AI/CDR tersedia sesuai kebutuhan.</p>
+      </div>
+      <div class="trust-item reveal">
+        <div class="trust-icon"><i class="fas fa-shield-alt"></i></div>
+        <h4>Original 100%</h4>
+        <p>Setiap desain dibuat dari nol, bukan template asal jadi atau plagiat.</p>
+      </div>
+      <div class="trust-item reveal reveal-delay-1">
+        <div class="trust-icon"><i class="fas fa-comments"></i></div>
+        <h4>Konsultasi Gratis</h4>
+        <p>Diskusi konsep dan brief lewat chat sebelum order tanpa biaya apapun.</p>
+      </div>
+      <div class="trust-item reveal reveal-delay-2">
+        <div class="trust-icon"><i class="fas fa-tags"></i></div>
+        <h4>Harga Transparan</h4>
+        <p>Tidak ada biaya tersembunyi. Harga final sesuai kesepakatan di awal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONI -->
+<section class="testi-section">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-label reveal">Testimoni</div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px">
+      <h2 class="section-title reveal">Apa Kata<br>Klien Kami</h2>
+      <p class="section-desc reveal" style="margin-bottom:0">Lebih dari 500 pelaku bisnis sudah mempercayai DesainKu untuk kebutuhan visual mereka.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal" style="grid-row:span 2">
+        <div class="testi-featured-badge">Featured</div>
+        <div class="testi-quote">"</div>
+        <p class="testi-text" style="color:rgba(240,255,240,0.88);font-size:17px;line-height:1.8">
+          Logo bisnis kue saya jadi keren banget! Prosesnya cepat, tim sangat responsif dan kooperatif. Hasilnya jauh melebihi ekspektasi. Sudah order lebih dari 10 kali dan tidak pernah kecewa.
+        </p>
+        <div class="stars">★★★★★</div>
+        <div class="testi-author" style="margin-top:8px">
+          <div class="avatar" style="background:var(--c3);color:#050A05">RD</div>
+          <div>
+            <div class="author-name">Rini Damayanti</div>
+            <div class="author-role">Owner Kue Laris, Bandung</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-1">
+        <div class="testi-quote" style="color:var(--c4)">"</div>
+        <p class="testi-text">Feed Instagram toko saya langsung rapi dan konsisten. Follower naik signifikan setelah pakai desain dari sini!</p>
+        <div class="stars">★★★★★</div>
+        <div class="testi-author" style="margin-top:8px">
+          <div class="avatar" style="background:rgba(212,245,66,0.15);color:var(--c4)">BH</div>
+          <div>
+            <div class="author-name">Budi Hartono</div>
+            <div class="author-role">Pemilik Toko Fashion Online</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-2">
+        <div class="testi-quote" style="color:var(--c3)">"</div>
+        <p class="testi-text">Packaging skincare saya jadi terlihat premium. Banyak reseller yang kira saya brand besar! Harga sangat terjangkau.</p>
+        <div class="stars">★★★★★</div>
+        <div class="testi-author" style="margin-top:8px">
+          <div class="avatar" style="background:rgba(57,231,95,0.15);color:var(--c3)">SA</div>
+          <div>
+            <div class="author-name">Siti Aulia</div>
+            <div class="author-role">Founder Skincare Lokal, Surabaya</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HARGA -->
+<section class="section" id="harga">
+  <div style="max-width:1200px;margin:0 auto">
+    <div style="text-align:center">
+      <div class="section-label reveal" style="justify-content:center">Paket Harga</div>
+      <h2 class="section-title reveal" style="max-width:560px;margin:0 auto">Transparan, Terjangkau,<br>Tanpa Biaya Tersembunyi</h2>
+      <p class="section-desc reveal" style="margin:16px auto 0;text-align:center">Pilih paket yang sesuai dengan kebutuhan bisnismu</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <div class="pricing-name">Starter</div>
+        <div class="pricing-price">Rp 99K</div>
+        <div class="pricing-sub">per desain · cocok untuk mulai</div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check-circle"></i> 1 konsep desain</li>
+          <li><i class="fas fa-check-circle"></i> 2x revisi</li>
+          <li><i class="fas fa-check-circle"></i> File PNG & JPG</li>
+          <li><i class="fas fa-check-circle"></i> Selesai 24 jam</li>
+          <li><i class="fas fa-check-circle"></i> Konsultasi via chat</li>
+        </ul>
+        <button class="pricing-btn" onclick="openWA()">Mulai Order</button>
+      </div>
+      <div class="pricing-card popular reveal reveal-delay-1">
+        <div class="popular-badge">Paling Populer 🔥</div>
+        <div class="pricing-name">Profesional</div>
+        <div class="pricing-price">Rp 249K</div>
+        <div class="pricing-sub">per desain · pilihan terbaik</div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check-circle"></i> 3 konsep desain</li>
+          <li><i class="fas fa-check-circle"></i> Revisi bebas</li>
+          <li><i class="fas fa-check-circle"></i> Semua format file</li>
+          <li><i class="fas fa-check-circle"></i> File sumber (AI/CDR)</li>
+          <li><i class="fas fa-check-circle"></i> Selesai 12 jam</li>
+          <li><i class="fas fa-check-circle"></i> Prioritas antrian</li>
+        </ul>
+        <button class="pricing-btn" onclick="openWA()">Mulai Order</button>
+      </div>
+      <div class="pricing-card reveal reveal-delay-2">
+        <div class="pricing-name">Brand Kit</div>
+        <div class="pricing-price">Rp 599K</div>
+        <div class="pricing-sub">paket lengkap · untuk brand serius</div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check-circle"></i> Logo + brand guideline</li>
+          <li><i class="fas fa-check-circle"></i> 10 template konten IG</li>
+          <li><i class="fas fa-check-circle"></i> Kartu nama & kop surat</li>
+          <li><i class="fas fa-check-circle"></i> Revisi bebas</li>
+          <li><i class="fas fa-check-circle"></i> Selesai 3 hari kerja</li>
+          <li><i class="fas fa-check-circle"></i> Konsultasi prioritas</li>
+        </ul>
+        <button class="pricing-btn" onclick="openWA()">Mulai Order</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="padding-top:0">
+  <div style="max-width:1200px;margin:0 auto">
+    <div style="text-align:center">
+      <div class="section-label reveal" style="justify-content:center">FAQ</div>
+      <h2 class="section-title reveal">Pertanyaan yang Sering Ditanyakan</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">Bagaimana cara melakukan pemesanan? <i class="fas fa-chevron-down faq-chevron"></i></button>
+        <div class="faq-a"><p>Kamu bisa langsung chat WhatsApp kami, ceritakan kebutuhan desainmu, isi brief singkat, lakukan pembayaran, dan desain akan mulai dikerjakan. Mudah seperti itu!</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">Apakah bisa revisi sampai puas? <i class="fas fa-chevron-down faq-chevron"></i></button>
+        <div class="faq-a"><p>Paket Profesional dan Brand Kit mendapatkan revisi tidak terbatas. Paket Starter mendapat 2x revisi. Kami tidak berhenti sampai kamu benar-benar puas dengan hasilnya.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">Format file apa saja yang akan saya terima? <i class="fas fa-chevron-down faq-chevron"></i></button>
+        <div class="faq-a"><p>Tergantung paket. Minimal kamu mendapat PNG dan JPG resolusi tinggi. Paket Profesional ke atas mendapat tambahan PDF, SVG, serta file sumber AI atau CDR yang bisa diedit.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">Apakah saya memiliki hak penuh atas desain yang dibuat? <i class="fas fa-chevron-down faq-chevron"></i></button>
+        <div class="faq-a"><p>Ya, 100%. Setelah desain selesai dan pembayaran lunas, hak cipta sepenuhnya menjadi milik kamu. Kamu bebas menggunakan desain untuk keperluan apapun tanpa batasan.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">Bagaimana metode pembayarannya? <i class="fas fa-chevron-down faq-chevron"></i></button>
+        <div class="faq-a"><p>Kami menerima transfer bank (BCA, Mandiri, BNI), dompet digital (GoPay, OVO, Dana, ShopeePay), dan juga tersedia pembayaran via marketplace seperti Tokopedia atau Shopee.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-bg-shape"></div>
+  <div style="flex:1">
+    <h2>Siap Wujudkan <span>Desain Impianmu?</span></h2>
+    <p style="color:rgba(240,255,240,0.4);margin-top:16px;font-size:15px">Konsultasi gratis, tidak ada kewajiban order.</p>
+  </div>
+  <div class="cta-form-wrap">
+    <div class="cta-input-group">
+      <input class="cta-input" type="tel" id="waInput" placeholder="Nomor WhatsApp kamu..." />
+      <button class="cta-submit" onclick="submitWA()">
+        <i class="fab fa-whatsapp"></i> Chat Sekarang
+      </button>
+    </div>
+    <p class="cta-note"><i class="fas fa-circle" style="font-size:7px;color:var(--c3)"></i> Biasanya kami balas dalam 5 menit · Gratis konsultasi</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo"><span>Desain</span>Ku</div>
+        <p class="footer-desc">Partner visual terpercaya untuk UMKM dan brand lokal Indonesia. Desain profesional, harga bersahabat.</p>
+        <div class="footer-social">
+          <button class="social-btn" onclick="window.open('https://instagram.com')"><i class="fab fa-instagram"></i></button>
+          <button class="social-btn" onclick="openWA()"><i class="fab fa-whatsapp"></i></button>
+          <button class="social-btn" onclick="window.open('https://tokopedia.com')"><i class="fas fa-store"></i></button>
+          <button class="social-btn" onclick="window.open('https://tiktok.com')"><i class="fab fa-tiktok"></i></button>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Layanan</h4>
+        <a href="#">Logo & Branding</a>
+        <a href="#">Konten Sosial Media</a>
+        <a href="#">Poster & Flyer</a>
+        <a href="#">Packaging Produk</a>
+        <a href="#">Desain Web UI</a>
+      </div>
+      <div class="footer-col">
+        <h4>Perusahaan</h4>
+        <a href="#">Tentang Kami</a>
+        <a href="#">Portofolio</a>
+        <a href="#">Blog</a>
+        <a href="#">Karir</a>
+        <a href="#">Kontak</a>
+      </div>
+      <div class="footer-col">
+        <h4>Dukungan</h4>
+        <a href="#">FAQ</a>
+        <a href="#">Cara Pesan</a>
+        <a href="#">Syarat & Ketentuan</a>
+        <a href="#">Kebijakan Privasi</a>
+        <a href="#">Refund Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 DesainKu. Semua hak cipta dilindungi.</p>
+      <div class="footer-badge"><i class="fas fa-map-marker-alt"></i> Yogyakarta, Indonesia</div>
+      <div class="footer-badge"><i class="fas fa-heart"></i> Dibuat dengan cinta untuk UMKM Indonesia</div>
+    </div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"><i class="fas fa-check-circle"></i> <span id="toastMsg">Berhasil!</span></div>
+
+<script>
+// Navbar scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40)
+})
+
+// Mobile menu
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open')
+}
+
+// Toast
+function showToast(msg){
+  const t=document.getElementById('toast')
+  document.getElementById('toastMsg').textContent=msg
+  t.classList.add('show')
+  setTimeout(()=>t.classList.remove('show'),3200)
+}
+
+// WhatsApp
+function openWA(){
+  window.open('https://wa.me/6281234567890?text=Halo%20DesainKu!%20Saya%20ingin%20konsultasi%20mengenai%20desain%20yang%20saya%20butuhkan.','_blank')
+}
+
+function submitWA(){
+  const val=document.getElementById('waInput').value.trim()
+  if(!val){showToast('Masukkan nomor WhatsApp kamu terlebih dahulu');return}
+  showToast('Mengalihkan ke WhatsApp...')
+  setTimeout(()=>window.open('https://wa.me/6281234567890?text=Halo!%20Nomor%20saya%20'+encodeURIComponent(val),'_blank'),800)
+}
+
+// FAQ
+function toggleFaq(btn){
+  const answer=btn.nextElementSibling
+  const isOpen=btn.classList.contains('open')
+  document.querySelectorAll('.faq-q.open').forEach(q=>{
+    q.classList.remove('open')
+    q.nextElementSibling.classList.remove('open')
+  })
+  if(!isOpen){btn.classList.add('open');answer.classList.add('open')}
+}
+
+// Scroll reveal
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})
+},{threshold:0.1})
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el))
+
+// Counter animation
+function animateCounter(id,target,suffix=''){
+  const el=document.getElementById(id)
+  if(!el)return
+  let start=0
+  const dur=1800
+  const step=target/dur*16
+  const timer=setInterval(()=>{
+    start=Math.min(start+step,target)
+    el.textContent=Math.floor(start)+suffix
+    if(start>=target)clearInterval(timer)
+  },16)
+}
+const heroObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      animateCounter('counter1',500,'+')
+      animateCounter('counter2',1200,'+')
+      heroObs.disconnect()
+    }
+  })
+},{threshold:0.3})
+const statEl=document.querySelector('.hero-stats')
+if(statEl)heroObs.observe(statEl)
+</script>
+</body>
+</html>
